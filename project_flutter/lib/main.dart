@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:project_flutter/coloumn_widget.dart';
+import 'package:project_flutter/icon_widget.dart';
 import 'package:project_flutter/latihan_row_coloumn.dart';
+import 'package:project_flutter/list_view_builder.dart';
+import 'package:project_flutter/list_view.dart';
 import 'package:project_flutter/row_widget.dart';
 import 'latihan_container.dart';
+import 'latihan_list_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +29,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.cyan[400],
           centerTitle: true,
         ),
-        body: LatihanRowColoumn(),
+        body:LatihanListView1(),
       )
     );
   }
