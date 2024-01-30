@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:project_flutter/coloumn_widget.dart';
+import 'package:project_flutter/grid/grid_count.dart';
+import 'package:project_flutter/grid/grid_view.dart';
 import 'package:project_flutter/icon_widget.dart';
 import 'package:project_flutter/latihan_row_coloumn.dart';
-import 'package:project_flutter/list_view_builder.dart';
 import 'package:project_flutter/list_view.dart';
+import 'package:project_flutter/navigation.dart';
 import 'package:project_flutter/row_widget.dart';
+import 'package:project_flutter/grid/latihan.dart';
 import 'latihan_container.dart';
-import 'latihan_list_view.dart';
+import 'listview/latihan_list_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,18 +23,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Belajar Flutter",
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Belajar Flutter"),
-          titleTextStyle: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold),
-          backgroundColor: Colors.cyan[400],
-          centerTitle: true,
-        ),
-        body:LatihanListView1(),
-      )
-    );
+      initialRoute: '/',
+      routes: {
+        '/': (context) => FirstRoute(),
+        '/grid': (context) => LatihanGridView(),
+        '/count': (context) => GridCount(),
+        '/gridview': (context) => GridBasic(),
+        '/listview': (context) => LatihanListView1(),
+      },);
   }
 }
 
@@ -39,6 +38,8 @@ class TextWidget extends StatelessWidget {
   const TextWidget({
     super.key,
   });
+
+
 
   @override
   Widget build(BuildContext context) {

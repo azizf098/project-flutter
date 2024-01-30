@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LatihanListView1 extends StatelessWidget {
-final List<String> memberName = ['roseee', 'jiso', 'lisaa', 'jenii'];
-final List<String> judulBerita = [
+  final List<String> memberName = ['roseee', 'jiso', 'lisaa', 'jenii'];
+  final List<String> judulBerita = [
     'Cetak All Kill Tercepat dengan Lagu Debut',
     'Artiss Subscriberr Terbanyak di YouTube ',
     'Raih Berbagai Penghargaan di Luar Negeri',
@@ -11,15 +11,36 @@ final List<String> judulBerita = [
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SingleChildScrollView(
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("LIST VIEW",
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            )),
+        leading: GestureDetector(
+          child: Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+          ),
+          onTap: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+      body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Container(
               width: 400,
               height: 50,
-              margin: EdgeInsets.only(left: 10, right: 10, top: 15,),
+              margin: EdgeInsets.only(
+                left: 10,
+                right: 10,
+                top: 15,
+              ),
               padding: EdgeInsets.all(15),
               color: const Color.fromARGB(255, 135, 182, 206),
               child: Text(
@@ -41,7 +62,7 @@ final List<String> judulBerita = [
                   height: 100,
                   margin: EdgeInsets.all(15),
                   child: Center(
-                    child: Row(
+                      child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Image.asset('assets/img/member.png'),
@@ -69,8 +90,7 @@ final List<String> judulBerita = [
                   itemBuilder: (context, index) => Container(
                     margin: EdgeInsets.all(10),
                     child: Center(
-                      child: Image.asset('assets/img/${memberName[index]}.png'
-                      ),
+                      child: Image.asset('assets/img/${memberName[index]}.png'),
                     ),
                     color: Colors.cyanAccent,
                   ),
