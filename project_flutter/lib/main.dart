@@ -5,6 +5,9 @@ import 'package:project_flutter/grid/grid_view.dart';
 import 'package:project_flutter/icon_widget.dart';
 import 'package:project_flutter/latihan_row_coloumn.dart';
 import 'package:project_flutter/list_view.dart';
+import 'package:project_flutter/screen/form_screen.dart';
+import 'package:project_flutter/screen/latihan.dart';
+import 'package:project_flutter/screen/list_flora.dart';
 import 'package:project_flutter/navigation.dart';
 import 'package:project_flutter/row_widget.dart';
 import 'package:project_flutter/grid/latihan.dart';
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
       title: "Belajar Flutter",
       initialRoute: '/',
       routes: {
-        '/': (context) => FirstRoute(),
+        '/': (context) => LatihanForm(),
         '/grid': (context) => LatihanGridView(),
         '/count': (context) => GridCount(),
         '/gridview': (context) => GridBasic(),
